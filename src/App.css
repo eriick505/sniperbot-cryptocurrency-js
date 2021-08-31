@@ -1,38 +1,114 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+
+  color: #fff;
+  background-color: #282c34;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chartView {
+  width: 100%;
+
+  overflow-x: scroll;
+
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chartView::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Track */
+.chartView::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.chartView::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.chartView::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#tradingview_e6ef3 {
+  height: 480px;
+
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contentInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  width: 100%;
+  margin-top: 20px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.contentInfo h3 {
+  text-align: left;
+  margin-bottom: 10px;
+
+  font-size: 22px;
+}
+
+.contentInfo ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+
+  font-size: 22px;
+}
+
+@media (min-width: 1025px) {
+  .contentInfo {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.buyAndSellForm .formRow {
+  text-align: left;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.buyAndSellForm .formRow label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buyAndSellForm .formRow input,
+select {
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+}
+
+ul li:not(:last-child) {
+  margin-bottom: 8px;
 }
